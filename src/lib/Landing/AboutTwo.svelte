@@ -26,7 +26,7 @@
 
     .img-about {
         background-size: cover;
-        background: url("src/assets/images/bg-about.png") no-repeat;
+        background: url("../../assets/images/bg-about.png") no-repeat;
         width: 100%;
         height: 100%;
     }

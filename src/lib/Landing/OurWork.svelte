@@ -2,8 +2,8 @@
 
     import Carousel from "../Components/Carousel.svelte";
 
-    let bg_img = "src/assets/images/bg-works.png";
-    let image_decoration  = "src/assets/images/icon.png";
+    let bg_img = new URL('../../assets/images/bg-works.png', import.meta.url).href;
+    let image_decoration  = new URL('../../assets/images/icon.png', import.meta.url).href;
 
     const images = [
         {

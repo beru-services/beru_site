@@ -1,9 +1,7 @@
 <script>
     import LayoutGrid, {Cell} from "@smui/layout-grid";
+
     let image = new URL('../../assets/images/Rectangle11.png', import.meta.url).href;
-
-
-
     let image_decoration  = new URL('../../assets/images/icon.png', import.meta.url).href;
 
 </script>
