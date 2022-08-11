@@ -2,12 +2,13 @@
     import LayoutGrid, {Cell} from "@smui/layout-grid";
     import Button, {Label} from "@smui/button";
 
-    let src = '/src/assets/images/beru-logo.png';
+    let src = new URL('../../assets/images/beru-logo.png', import.meta.url).href;
 
-    let facebook = '/src/assets/images/facebook.png';
-    let tw = '/src/assets/images/twitter.png';
-    let instagram = '/src/assets/images/instagram.png';
-    let logo = '/src/assets/images/beru-logo.png';
+    const facebook = new URL('../../assets/images/facebook.png', import.meta.url).href;
+
+    let tw = new URL('../../assets/images/twitter.png', import.meta.url).href;
+    let instagram = new URL('../../assets/images/instagram.png', import.meta.url).href;
+    let logo = new URL('../../assets/images/beru-logo.png', import.meta.url).href;
 
     function hola() {
 
