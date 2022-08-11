@@ -1,0 +1,25 @@
+.logo img {
+    width: 100%;
+}
+
+a {
+    color: white;
+    font-family: Light;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+header {
+    height: 816px;
+    background-image: url("../../assets/images/bg-banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 center;
+    position: relative;
+}
+
+header:before {
+    background: #2A2427;
+}
