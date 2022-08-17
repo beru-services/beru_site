@@ -1,25 +1,65 @@
 <script>
+    import { onMount } from "svelte";
     import Header from "../lib/Landing/Header.svelte";
     import About from "../lib/Landing/About.svelte";
     import Services from "../lib/Landing/Services.svelte";
     import OurWork from "../lib/Landing/OurWork.svelte";
     import AboutTwo from "../lib/Landing/AboutTwo.svelte";
     import Footer from "../lib/Landing/Footer.svelte";
+    import Loading from "../lib/Components/Loading.svelte";
 
-    console.log(import.meta.env.VITE_SOME_KEY)
+    let aboutFirstSection
+    let aboutSecondSection
+    let services
+    let gallery
+    let header
+    let request = true
+
+
+    onMount(async function() {
+        const response = await fetch(import.meta.env.VITE_URL_API + 'v1/web/site', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + import.meta.env.VITE_TOKEN_API,
+            },
+        })
+
+        const dataResponse = await response.json()
+
+        aboutFirstSection = dataResponse.about_first_section[0]
+
+        aboutSecondSection = dataResponse.about_second_section[0]
+
+        services = dataResponse.services[0]
+
+        gallery = dataResponse.gallery.gallery_image
+
+        header = dataResponse.header
+
+
+        setTimeout(() => {
+            request = false
+        },300)
+    })
+
+
 </script>
 
-<Header />
+{#if !request}
+    <Header data={header} />
 
-<About />
+    <About about={aboutFirstSection} />
 
-<Services />
+    <Services service={services} />
 
-<OurWork />
+    <OurWork images={gallery} />
 
-<AboutTwo />
+    <AboutTwo about={aboutSecondSection} />
 
-<Footer />
+    <Footer />
+{:else}
+    <Loading />
+{/if}
 
 <style>
     @import "../assets/css/landing.css";

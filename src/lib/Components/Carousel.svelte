@@ -112,10 +112,6 @@
         border: none;
     }
 
-    button:focus {
-        outline: auto;
-    }
-
     #left {
         left: 10px;
     }

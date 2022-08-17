@@ -23,3 +23,14 @@ header {
 header:before {
     background: #2A2427;
 }
+
+.img-about {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.img-about img {
+    width: 100%;
+    height: 100%;
+}

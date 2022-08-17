@@ -1,88 +1,56 @@
 <script>
-    import LayoutGrid, {Cell} from "@smui/layout-grid";
+    import {Cell} from "@smui/layout-grid";
+    import {beforeUpdate} from "svelte";
 
     let image = new URL('../../assets/images/Rectangle11.png', import.meta.url).href;
     let image_decoration  = new URL('../../assets/images/icon.png', import.meta.url).href;
 
+    export let service = {}
+    let title
+    let subtitleOne
+    let subtitleTwo
+
+    beforeUpdate(async function() {
+        if (service.title) {
+            title = service.title.substring(0, service.title.lastIndexOf(' '))
+            subtitleOne = title.substring(title.lastIndexOf(' '))
+
+            title = title.replace(subtitleOne, '')
+            subtitleTwo = service.title.substring(service.title.lastIndexOf(' '))
+        }
+
+
+    })
+
 </script>
 <section class="services">
     <h1 class="font-cinzel white-color">
-        MAKE YOU CABIN <span class="green-color">WORTH IT</span>
+        {#if title}
+        {title}
+        <span class="green-color">{subtitleOne} {subtitleTwo}</span>
+        {/if}
     </h1>
     <img src="{image_decoration}" style = "margin-top: 10px">
 
     <div class="container-center">
-        <Cell span="2" style="margin-left: 4px; margin-right: 4px;">
-            <div class="container-image">
-                <h2 class="title">Fresh Flowers for Any Size Cabin</h2>
-                <img src="{image}">
-                <div class="detail-service">
-                    <h2>Fresh Flowers for Any Size Cabin</h2>
+        {#if service.service}
+            {#each service.service as service}
+                <Cell span="2" style="margin-left: 4px; margin-right: 4px;">
+                    <div class="container-image">
+                        <h2 class="title">{service.title}</h2>
+                        <img src="{image}">
+                        <div class="detail-service">
+                            <h2>{service.title}</h2>
 
-                    <p class="font-regular">
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                    </p>
-                </div>
-            </div>
+                            <p class="font-regular">
+                                {service.description}
+                            </p>
+                        </div>
+                    </div>
 
-        </Cell>
-        <Cell span="2" style="margin-left: 4px; margin-right: 4px;">
-            <div class="container-image">
-                <h2 class="title">Fresh Flowers for Any Size Cabin</h2>
-                <img src="{image}">
-                <div class="detail-service">
-                    <h2>Fresh Flowers for Any Size Cabin</h2>
-
-                    <p class="font-regular">
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                    </p>
-                </div>
-            </div>
-        </Cell>
-        <Cell span="2" style="margin-left: 4px; margin-right: 4px;">
-            <div class="container-image">
-                <h2 class="title">Fresh Flowers for Any Size Cabin</h2>
-                <img src="{image}">
-                <div class="detail-service">
-                    <h2>Fresh Flowers for Any Size Cabin</h2>
-
-                    <p class="font-regular">
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                    </p>
-                </div>
-            </div>
-        </Cell>
-        <Cell span="2" style="margin-left: 4px; margin-right: 4px;">
-            <div class="container-image">
-                <h2 class="title">Fresh Flowers for Any Size Cabin</h2>
-                <img src="{image}">
-                <div class="detail-service">
-                    <h2>Fresh Flowers for Any Size Cabin</h2>
-
-                    <p class="font-regular">
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                    </p>
-                </div>
-            </div>
-        </Cell>
-        <Cell span="2" style="margin-left: 4px; margin-right: 4px;">
-            <div class="container-image">
-                <h2 class="title">Fresh Flowers for Any Size Cabin</h2>
-                <img src="{image}">
-                <div class="detail-service">
-                    <h2>Fresh Flowers for Any Size Cabin</h2>
-
-                    <p class="font-regular">
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                        Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat.
-                    </p>
-                </div>
-            </div>
-        </Cell>
+                </Cell>
+            {/each}
+        {/if}
     </div>
 </section>
 

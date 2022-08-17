@@ -10,9 +10,7 @@
     let instagram = new URL('../../assets/images/instagram.png', import.meta.url).href;
     let logo = new URL('../../assets/images/beru-logo.png', import.meta.url).href;
 
-    function hola() {
-
-    }
+    export let data = {}
 
 </script>
 
@@ -75,15 +73,15 @@
             </Cell>
         </LayoutGrid>
     </section>
-    <section class="container-main h70">
+    <section class="container-main h50">
         <div class="align-center">
             <LayoutGrid align="right" style="padding: 0;"
                         fixedColumnWidth>
                 <Cell align="middle" span="12" style="text-align: left">
-                    <h1 class="w100 font-cinzel white-color">MAKE YOUR CABIN WORTHY</h1>
+                    <h1 class="w100 font-cinzel white-color">{data.title}</h1>
                 </Cell>
                 <Cell align="middle" span="12" style="text-align: left; margin-top: 10px;">
-                    <h2 class="w100 font-cinzel green-color" style="line-height: 0">Luxury Jet Service</h2>
+                    <h2 class="w100 font-cinzel green-color" style="line-height: 0">{data.sub_title}</h2>
                 </Cell>
             </LayoutGrid>
         </div>

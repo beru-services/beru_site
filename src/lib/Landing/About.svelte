@@ -1,22 +1,23 @@
 <script>
     import LayoutGrid, {Cell} from "@smui/layout-grid";
+
+    export let about = {}
+
 </script>
 <section class='bg'>
-    <LayoutGrid style = 'padding: 0; min-height: 500px;'>
+    <LayoutGrid style='padding: 0; min-height: 500px;'>
         <Cell span='6'>
-            <div class="img-about"></div>
+            <div class="img-about">
+                <img src="{about.image}">
+            </div>
         </Cell>
         <Cell span='6'>
             <LayoutGrid>
-                <Cell span = '8' style = 'text-align: left'>
-                    <p class="green-color font-ligth" style = 'text-align: left'>ABOUT</p>
-                    <h2 class="font-cinzel">BEST LAUNDRY SERVICE FOR YOUR JET</h2>
+                <Cell span='8' style='text-align: left'>
+                    <p class="green-color font-ligth" style='text-align: left'>ABOUT</p>
 
-                    <p class="font-regular" style = 'text-align: left'>Lorem ostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-                        consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non
-                        deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-                        Exercitation veniam consequat sunt nostrud amet.Amet minim mollit non deserunt ullamco est sit aliqua
-                        dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                    <h2 class="font-cinzel">{about.title}</h2>
+                    <p class="font-regular" style='text-align: left'>{about.description}</p>
                 </Cell>
             </LayoutGrid>
 
@@ -26,15 +27,6 @@
 <style>
     .bg {
         background: white;
-
-    }
-
-    .img-about {
-        min-height: 500px;
-        background-size: cover;
-        background: url("../../assets/images/bg-about.png") no-repeat;
-        width: 100%;
-        height: 100%;
     }
 
 </style>

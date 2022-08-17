@@ -113,12 +113,16 @@ h1, h2, h3, h4 {
   height: 100%;
 }
 
+.h80 {
+  height: 80%;
+}
+
 .h70 {
   height: 70%;
 }
 
 .h50 {
-  height: 50vh;
+  height: 50%;
 }
 
 .w100 {
