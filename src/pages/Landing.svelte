@@ -15,11 +15,10 @@
     let header
     let request = true
     const URL_API = import.meta.env.VITE_URL_API + "v1/web/site"
-    const TOKEN_API = "Bearer " + import.meta.env.VITE_TOKEN_API
+    const TOKEN_API = "Token " + import.meta.env.VITE_TOKEN_API
 
 
     onMount(async function() {
-        console.log(TOKEN_API.trim() )
 
         const response = await fetch(URL_API.replace('"', ''), {
             method: 'GET',
