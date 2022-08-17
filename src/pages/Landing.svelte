@@ -15,7 +15,7 @@
     let header
     let request = true
     const URL_API = import.meta.env.VITE_URL_API + "v1/web/site"
-    const TOKEN_API = import.meta.env.VITE_TOKEN_API
+    const TOKEN_API = "Bearer " + import.meta.env.VITE_TOKEN_API
 
 
     onMount(async function() {
@@ -24,7 +24,7 @@
         const response = await fetch(URL_API.replace('"', ''), {
             method: 'GET',
             headers: {
-                'Authorization': "Bearer " + TOKEN_API.trim(),
+                'Authorization': TOKEN_API.replace('"', ''),
             },
         })
 
