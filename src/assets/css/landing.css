@@ -13,7 +13,6 @@ h1, h2 {
 
 header {
     height: 816px;
-    background-image: url("../../assets/images/bg-banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 center;

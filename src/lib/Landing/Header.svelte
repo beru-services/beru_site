@@ -2,8 +2,6 @@
     import LayoutGrid, {Cell} from "@smui/layout-grid";
     import Button, {Label} from "@smui/button";
 
-    let src = new URL('../../assets/images/beru-logo.png', import.meta.url).href;
-
     const facebook = new URL('../../assets/images/facebook.png', import.meta.url).href;
 
     let tw = new URL('../../assets/images/twitter.png', import.meta.url).href;
@@ -14,7 +12,7 @@
 
 </script>
 
-<header>
+<header style="background-image: url('{data.image}')">
     <section class="container-main">
         <LayoutGrid>
             <Cell span='10'>
