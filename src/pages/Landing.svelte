@@ -19,10 +19,10 @@
 
 
     onMount(async function() {
-        const response = await fetch(URL_API.trim() + 'v1/web/site', {
+        const response = await fetch(URL_API.trim() + "v1/web/site", {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + TOKEN_API.trim(),
+                'Authorization': "Bearer " + TOKEN_API.trim(),
             },
         })
 
