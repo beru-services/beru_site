@@ -19,7 +19,7 @@
 
 
     onMount(async function() {
-        console.log(URL_API.trim() )
+        console.log(TOKEN_API.trim() )
 
         const response = await fetch(URL_API.replace('"', ''), {
             method: 'GET',
